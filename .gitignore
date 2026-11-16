@@ -1,0 +1,11 @@
+_local_review/
+**/_local_review/
+**/PUBLICATION_REVIEW.md
+**/__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+

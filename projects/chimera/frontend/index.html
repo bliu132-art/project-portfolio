@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071a24">
+    <title>Chimera · A Seven-Day Soul Creature</title>
+    <link rel="stylesheet" href="css/style.css?v=36">
+</head>
+<body>
+    <div class="ambient-orb orb-one"></div>
+    <div class="ambient-orb orb-two"></div>
+
+    <section id="start-screen" class="start-screen" aria-labelledby="start-title">
+        <div class="start-card">
+            <p class="kicker">FIELD LOG · SOUL SPECIMEN 01</p>
+            <div class="start-creature-frame" aria-hidden="true">
+                <canvas id="start-creature-canvas" width="24" height="24"></canvas>
+            </div>
+            <h1 id="start-title">CHIMERA</h1>
+            <p>Your choices will shape a small soul creature—how it sees, moves, connects, and grows.</p>
+            <button id="begin-button" class="primary-button">Begin the seven-day journey</button>
+            <button id="new-game-button" class="secondary-button" hidden>Start a new journey</button>
+            <p class="start-note">No answer is right or wrong. Follow your instincts.</p>
+        </div>
+    </section>
+
+    <div class="game-container" id="game-container">
+        <header>
+            <div class="brand-block">
+                <p class="kicker">SOULPRINT FIELD NOTES</p>
+                <h1>CHIMERA</h1>
+            </div>
+            <div class="game-info" aria-label="Current game time">
+                <span id="day-display">Day 1</span>
+                <span class="phase-dot">◆</span>
+                <span id="phase-display">Morning</span>
+            </div>
+        </header>
+
+        <div id="day-progress" class="day-progress" aria-label="Seven-day progress"></div>
+
+        <main>
+            <section class="creature-panel" aria-labelledby="creature-title">
+                <div class="specimen-label">
+                    <span>LIVE SPECIMEN</span>
+                    <span>24 × 24</span>
+                </div>
+                <div class="creature-canvas-frame">
+                    <canvas id="creature-canvas" width="24" height="24" aria-label="Animated procedural soul creature"></canvas>
+                    <div class="scan-line" aria-hidden="true"></div>
+                </div>
+                <p id="stage-label" class="stage-label">STAGE 1 · SOUL EGG</p>
+                <h2 id="creature-title">Your Soul Creature</h2>
+                <p id="creature-description">Your creature is still young and has not developed any special traits.</p>
+                <p id="creature-abilities">Abilities: None</p>
+            </section>
+
+            <section class="game-panel" aria-live="polite">
+                <p id="section-kicker" class="section-kicker">TODAY'S FIELD NOTE</p>
+                <h2 id="section-title">Morning Activity</h2>
+                <p id="story-text">Choose what you would like to do this morning.</p>
+                <div id="evolution-summary" hidden></div>
+                <div id="choice-container"></div>
+            </section>
+        </main>
+
+        <footer>
+            <span>PLAYER DECISIONS</span><i>→</i><span>SOULPRINT</span><i>→</i><span>CREATURE EVOLUTION</span>
+        </footer>
+    </div>
+
+    <aside id="debug-panel" class="debug-panel" hidden>
+        <div class="debug-header">
+            <strong>PLAYER MODEL DEBUG</strong>
+            <button id="debug-close" aria-label="Close debug panel">×</button>
+        </div>
+        <pre id="debug-output"></pre>
+        <div class="debug-actions">
+            <button id="debug-export">Export Save</button>
+            <button id="debug-reset">Reset Game</button>
+        </div>
+    </aside>
+    <button id="debug-open" class="debug-open" hidden>DEBUG</button>
+
+    <script src="js/playerModel.js?v=31"></script>
+    <script src="js/creatureGenome.js?v=35"></script>
+    <script src="js/creatureGrowth.js?v=31"></script>
+    <script src="js/creatureSpecies.js?v=31"></script>
+    <script src="js/creatureMapping.js?v=35"></script>
+    <script src="js/creatureEvolution.js?v=35"></script>
+    <script src="js/creatureRenderer.js?v=35"></script>
+    <script src="js/creatureAnimator.js?v=31"></script>
+    <script src="js/gameState.js?v=31"></script>
+    <script src="js/data.js?v=31"></script>
+    <script src="js/game.js?v=36"></script>
+</body>
+</html>
